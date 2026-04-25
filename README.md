@@ -2,8 +2,18 @@
 ![version](https://img.shields.io/badge/version-v1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **AI-powered DevSecOps pipeline for automated Android security auditing**  
+> **Scan, analyze and generate AI-powered security reports for Android apps in a single pipeline.**  
 > Automated DevSecOps pipeline combining SAST, MobSF, Trivy and AI-driven analysis.
+
+## ⚡ TL;DR
+
+mSEC-AM is an automated DevSecOps pipeline for Android apps that:
+
+- Runs CodeQL, MobSF and Trivy
+- Aggregates results into a unified report
+- Generates AI-ready security analysis
+
+➡️ Plug into your repo and get a full security audit on every push.
 
 ## 🧠 Overview
 
@@ -15,6 +25,11 @@ It combines:
 - 📱 Mobile analysis (MobSF)
 - 📦 Dependency vulnerability scanning (Trivy)
 - 🤖 AI-driven post-processing and reporting
+
+### 🤖 AI-driven analysis
+- Correlates findings across multiple tools
+- Generates human-readable security reports
+- Produces structured JSON for LLM-based pipelines
 
 👉 The goal is to **automate security auditing and generate structured outputs for further analysis (including LLM-based systems).**
 
@@ -133,12 +148,25 @@ flowchart LR
 👉 The security report will be generated automatically as a GitHub artifact.
 
 
-## 🎯 Output
+## 🎯 Use Cases
+
+- Security auditing in CI/CD pipelines
+- Academic research in mobile security
+- Automated vulnerability reporting
+- Pre-release security validation for Android apps
+
+## 📊 Output
 
 After execution, the pipeline generates:
 
 - 📄 Security report (PDF)
 - 📄 Security report (DOCX)
+
+🔎 Example reports (real pipeline output):
+
+- 📄 [View sample PDF report](https://github.com/investigaciongiis/openMRS/raw/refs/heads/main/reports/Audit%20Summary.pdf)
+- 📄 [View sample DOCX report](https://github.com/investigaciongiis/openMRS/raw/refs/heads/main/reports/Audit%20Summary.docx)
+
 
 All outputs are available as GitHub Actions artifacts.
 
@@ -318,10 +346,23 @@ You should see the MobSF dashboard.
 
 To integrate MobSF with the pipeline, you need an API key:
 
-> Go to the MobSF web interface
-> Click on **"Settings"** (top menu)
-> Locate the **API Key** section
-> Copy the API key and store it as the `MOBSF_API_KEY` repository secret in GitHub
+Option 1 – From the MobSF console:
+
+1. When MobSF is started (run.bat), the API key is displayed in the console output
+2. Copy the API key from the terminal
+
+
+Option 2 – From the MobSF web interface:
+
+1. Go to the MobSF web interface
+2. Click on “Settings” (top menu)
+3. Locate the API Key section
+4. Copy the API key
+
+
+Finally, store the API key as the MOBSF_API_KEY repository secret in GitHub.
+
+
 
 ### 🔐 4. Configure GitHub Secrets and Variables
 
@@ -533,7 +574,7 @@ Configure the runner using the command provided by GitHub:
 .\config.cmd --url https://github.com/<OWNER>/<REPO> --token <TOKEN>
 ```
 
-#### ▶️ Run the runner
+#### ▶️ Start the runner
 
 Run manually:
 

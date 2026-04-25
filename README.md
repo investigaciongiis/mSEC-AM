@@ -5,16 +5,6 @@
 > **Scan, analyze and generate AI-powered security reports for Android apps in a single pipeline.**  
 > Automated DevSecOps pipeline combining SAST, MobSF, Trivy and AI-driven analysis.
 
-## ⚡ TL;DR
-
-mSEC-AM is an automated DevSecOps pipeline for Android apps that:
-
-- Runs CodeQL, MobSF and Trivy
-- Aggregates results into a unified report
-- Generates AI-ready security analysis
-
-➡️ Plug into your repo and get a full security audit on every push.
-
 ## 🧠 Overview
 
 **mSEC-AM** is a security auditing system for Android applications that integrates multiple analysis tools into a unified pipeline.
